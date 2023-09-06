@@ -7,7 +7,16 @@ import matplotlib.pyplot as plt
 # wget https://github.com/bxlab/cmdb-quantbio/raw/main/assignments/lab/bulk_RNA-seq/extra_data/all_annotated.csv
 # sisA (FBtr0073461)
 
-transcripts = np.loadtxt( "all_annotated.csv", delimiter=",", usecols=0, dtype="<U30", skiprows=1 )
+#Modify plot-sisA.py (do not create a new file) to load the transcripts information using open() and a for loop rather than np.loadtxt(). Remember that the first line is a header and should not be stored in the transcripts list. Push just your code to your git repository and confirm at https://github.com that your code no longer uses np.loadtxt().
+
+transcripts = []
+for line in open("all_annotated.csv", 'r'):
+    if line.startswith("t_name"):
+        continue
+    else:
+        transcripts.append(line.split(',')[0])
+
+#transcripts = np.loadtxt( "all_annotated.csv", delimiter=",", usecols=0, dtype="<U30", skiprows=1 )
 print( "transcripts: ", transcripts[0:5] )
 
 samples = np.loadtxt( "all_annotated.csv", delimiter=",", max_rows=1, dtype="<U30" )[2:]
@@ -21,12 +30,6 @@ row = None
 for i in range(len(transcripts)):
     if transcripts[i] == 'FBtr0073461':
         row = i
-
-# Find columns with samples of interest
-# cols = []
-# for i in range(len(samples)):
-#     if "female" in samples[i]:
-#         cols.append(i)
 
 # Separate the Male and Female data visually on the plot
 
