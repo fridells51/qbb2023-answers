@@ -24,3 +24,5 @@
 *.tbz
 *.tbz2
 *.vcf
+*.csv
+*.DS*
