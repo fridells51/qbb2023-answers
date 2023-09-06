@@ -22,16 +22,16 @@ for i in range(len(transcripts)):
         row = i
 
 # Find columns with samples of interest
-cols = []
-for i in range(len(samples)):
-    if "female" in samples[i]:
-        cols.append(i)
+# cols = []
+# for i in range(len(samples)):
+#     if "female" in samples[i]:
+#         cols.append(i)
 
 # Subset data of interest
-expression = data[row, cols]
+expression = data[row, ]
 
 # Prepare data
-x = samples[cols]
+x = samples
 y = expression
 
 # Plot data
