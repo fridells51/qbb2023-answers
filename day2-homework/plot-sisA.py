@@ -17,6 +17,7 @@ data = np.loadtxt( "all_annotated.csv", delimiter=",", dtype=np.float32, skiprow
 print( "data: ", data[0:5, 0:5] )
 
 # Find row with transcript of interest
+row = None
 for i in range(len(transcripts)):
     if transcripts[i] == 'FBtr0073461':
         row = i
@@ -27,22 +28,39 @@ for i in range(len(transcripts)):
 #     if "female" in samples[i]:
 #         cols.append(i)
 
-# Subset data of interest
-expression = data[row, ]
+# Separate the Male and Female data visually on the plot
 
-for i in range(len(expression)):
+full_expression = data[row, ]
+m_expr = []
+f_expr = []
+for i in range(len(samples)):
     if samples[i].startswith("male"):
-        expression[i] = expression[i] * 2
+        m_expr.append(full_expression[i])
+    else:
+        f_expr.append(full_expression[i])
+
+dev_samples = set()
+for i in range(len(samples)):
+    dev_samples.add(samples[i].split('_')[1])
+
+# Combine the m_expr and f_expr into an array
+combined = np.array([f_expr, m_expr])
+
 
 # Prepare data
-x = samples
-y = expression
+x = sorted(list(dev_samples))
+y1 = f_expr
+y2 = m_expr
 
 # Plot data
 fig, ax = plt.subplots()
 ax.set_title( "FBtr0073461" )
-ax.plot( x, y )
+ax.plot( x, y1 , label = 'Female')
+ax.plot( x, y2 , label = 'Male')
+plt.ylabel("mRNA Abundance (RPKM)")
+plt.xlabel("developmental stage")
 plt.xticks(rotation=90)
+plt.legend()
 fig.set_tight_layout(True)
 fig.savefig( "FBtr0073461.png" )
 plt.close( fig )
