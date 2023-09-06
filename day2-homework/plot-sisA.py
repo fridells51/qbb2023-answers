@@ -30,6 +30,10 @@ for i in range(len(transcripts)):
 # Subset data of interest
 expression = data[row, ]
 
+for i in range(len(expression)):
+    if samples[i].startswith("male"):
+        expression[i] = expression[i] * 2
+
 # Prepare data
 x = samples
 y = expression
