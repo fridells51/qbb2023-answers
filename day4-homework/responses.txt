@@ -1,0 +1,23 @@
+Figure 3 Generation Number to Fixation as a function of population size:
+
+The biological implication of this figure is that population size has an affect on how long it takes an allele to reach fixation. This makes sense as it will take many more generations for
+the allele to appear in all chromosomes in a large population. Increasing the population size
+has the effect of increasing the time it takes to reach fixation.
+
+Assumption: Random Mating
+
+This assumption excludes the possibility that there is no sexual selection in the model.
+In the presence of sexual selection, an allele is more likely to reach fixation in a
+population much faster than it would if genetic drift were the only force acting on the
+population. Sexual selection is usually present in a population because variations of
+an allele can affect the fitness of an organism, or that organism's chance at reproducing.
+
+Assumption: Closed System
+
+The model does not account for any flow of new alleles into the system. In nature, this can
+occur when different species interact, or when migration introduces or removes organisms
+from the population. The flow of new alleles into the system or the flow of alleles out of
+the system will affect the number of alleles present in the system. If new organisms enter the
+system with novel alleles, it may take longer for any of the alleles to reach fixation. If
+a large portion of the population leaves, and the remaining population is not very diverse,
+then the allele may go to fixation quickly

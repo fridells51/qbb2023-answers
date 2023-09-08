@@ -18,7 +18,7 @@ Number of generations to fixation is the length of the list
 
 import numpy as np
 import matplotlib.pyplot as plt
-np.random.seed(12)
+np.random.seed(1234)
 def wf(n = int(), p = float()):
 
     frequencies = [p]
@@ -69,11 +69,11 @@ plt.ylabel("Mean Generation Number to Fixation \n over 50 Simulations")
 plt.tight_layout()
 
 
-afs = [0.5, 0.6, 0.7, 0.8, 0.9]
+afs = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
 avg_fix_times = []
 for p in afs:
     fix_times = []
-    for i in range(10):
+    for i in range(1000):
         n = 1000
         fix_times.append(len(wf(n, p)))
     avg_fix_times.append(np.mean(fix_times))
