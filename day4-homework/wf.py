@@ -39,6 +39,19 @@ ax.plot(wf(n, p))
 plt.xlabel("Generation Number")
 plt.ylabel("Allele Frequency")
 plt.tight_layout()
+plt.savefig("allele-frequency.png")
+
+
+fig12, ax12 = plt.subplots()
+alleles = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
+for i in range(len(alleles)):
+    w = wf(100, alleles[i])
+    ax12.plot(w)
+
+plt.xlabel("Generation Number")
+plt.ylabel("Allele Frequency")
+plt.tight_layout()
+plt.savefig('multiple-alleles.png')
 
 fixation_time = []
 for i in range(1000):
@@ -50,6 +63,7 @@ ax2.hist(fixation_time)
 plt.xlabel("Generations until Fixation")
 plt.ylabel("Count")
 plt.tight_layout()
+plt.savefig("histogram.png")
 
 
 pop_sizes = [50, 60, 70, 80, 90]
@@ -67,6 +81,7 @@ plt.xticks(pop_sizes)
 plt.xlabel("Number of Alleles in Population")
 plt.ylabel("Mean Generation Number to Fixation \n over 50 Simulations")
 plt.tight_layout()
+plt.savefig('pop_size_fixation.png')
 
 
 afs = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
@@ -84,6 +99,7 @@ plt.xticks(afs)
 plt.xlabel("Initial Allele Frequency")
 plt.ylabel("Mean Fixation Generation Number \n over 1000 Simulations (N = 10)")
 plt.tight_layout()
+plt.savefig('allele_freq_fixation.png')
 
 plt.show()
 
