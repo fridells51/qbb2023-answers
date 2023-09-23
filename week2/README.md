@@ -30,7 +30,7 @@ identical, and both are a very tight fit.
 
 2.5
 
-ATTCTTATTCATTGATTT
+This Question Is Not Possible To Solve.
 
 2.6
 
