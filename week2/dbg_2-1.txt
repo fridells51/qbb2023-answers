@@ -1,4 +1,4 @@
-digraph kmers { ATT -> TTC;
+digraph { ATT -> TTC;
 TTC -> TCA;
 ATT -> TTG;
 TTG -> TGA;
