@@ -21,3 +21,5 @@ vcffilter -f "QUAL > 20" all.vcf > filtered.vcf
 
 
 vcfallelicprimitives filtered.vcf -k > decomposed.vcf
+
+SnpEff R64-1-1.105 decomposed.vcf
