@@ -43,6 +43,10 @@ the entire sequence, there is no need for a reference sequence.
 
 3.1
 
+input: Tell me why I should be interested in studying genomics. Please cite your sources and provide references.
+
+Chat response:
+
 Studying genomics is an exciting and important field with numerous reasons to
 pique your interest. Genomics refers to the study of an organism's complete set
 of genes, including all of its DNA, and how these genes interact with each
