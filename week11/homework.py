@@ -53,7 +53,7 @@ adata.obsm['X_umap'] = umap
 adata.obsm['X_tsne'] = tsne
 
 
-marker_genes = ['PPBP', 'MS4A1', 'GNLY']
+marker_genes = ['PPBP', 'MS4A1', 'NKG7']
 
 sc.tl.umap(adata_copy)
 sc.pl.umap(adata_copy, color=marker_genes, use_raw=False)
@@ -64,9 +64,9 @@ fig, axes = plt.subplots(1, num_genes, figsize=(5*num_genes, 4))
 for i, gene in enumerate(marker_genes):
     sc.pl.umap(adata, color=gene, ax=axes[i], show=False, legend_loc='on data', legend_fontsize=10, title=gene)
 
-plt.tight_layout()
 
 fig.suptitle('Expression of Marker Genes in UMAP')
+plt.tight_layout()
 fig.savefig('marker_genes_umap.png')
 plt.close(fig)
 
