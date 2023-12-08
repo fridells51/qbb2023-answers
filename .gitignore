@@ -28,3 +28,7 @@
 *.DS*
 ._*
 *data*
+week8/week8_export/output
+week8/week8_export/raw
+week8/week8_export/runChicago.R
+*.tar.gz
